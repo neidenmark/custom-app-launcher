@@ -1,0 +1,12 @@
+<template>
+    <lightning-layout>
+        <template if:true={apps.data}>
+            <template for:each={apps.data} for:item="app" for:index="i">
+                <c-app-launcher-app app={app} index={i} key={app.Id}></c-app-launcher-app>
+            </template>
+        </template>
+        <template if:true={apps.error}>
+            <c-error-panel errors={data.error}></c-error-panel>
+        </template>
+    </lightning-layout>
+</template>
